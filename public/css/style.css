@@ -1,0 +1,386 @@
+*{
+    padding:0px;
+    margin: 0px;
+   
+  
+
+}
+
+body{
+    background-color: white;
+}
+
+
+.header{
+    position: fixed;
+    top:0;
+    display: block;
+    margin:0;
+    width: 100%;
+    color:darkslategray;
+    background-color: white;
+    height: 10%;   
+    box-shadow: 0px 1px rgb(216, 214, 214);
+
+}
+
+.authenticator{
+    height: 80%;
+    margin:0;
+    display: inline-flex;
+    padding-top:5px;
+    align-items: stretch;
+   float:right;
+    cursor: pointer;
+    width:5%;
+  
+    align-items: flex-end;
+   
+    
+}
+
+
+
+
+
+
+.svg_class{
+    height: 80%;
+    float: left;
+    padding-top:5px;
+    display: flex;
+    cursor: pointer;
+    width:19%;
+    margin:0;
+    padding-left: 0.3%;
+    
+
+}
+.Name{
+    padding-top: 2px;
+    width: 50%;
+    display: inline-flex;
+    
+    
+}
+h4{
+    margin-left: 10px;
+    width:100%;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height:max-content;
+    font-size:30px;
+    color: rgb(88, 82, 82);
+}
+.btn{
+    cursor: pointer;
+    height: 30px;
+}
+.btn1
+{
+    cursor:pointer;
+    height: 35px;
+    padding-top:10px;
+    margin-top:0;
+    padding-bottom: 23px;
+    margin-left: 23px;;
+    
+
+}
+.complete_Bar{
+    width:70%;
+    display: inline-flex;
+    align-items: center;
+    padding-top:4px;
+    height: 70%;
+    justify-content: center;
+    
+}
+.MyNote_Logo{
+    margin-left:9px;
+    margin-right:16px;
+    height: 100%;
+}
+.search_bar{
+    width:80%;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+.toggle{
+   width:20%;
+   height:60%;
+   display: inline-flex;
+   
+  align-items: flex-end;
+}
+h2{
+    color: grey;
+  
+    width:60%;
+   
+   
+    display:inline-flex;
+    float: right;
+  
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img:hover{
+background-color: rgb(131, 128, 128);
+border-radius: 100px;
+}
+h3{
+    color: grey;
+ 
+    width: 40%;
+  
+display:inline-flex;
+    text-align: left;
+   
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search{
+    border: 0px;
+    background-color: #e6eaec;
+    border-radius: 8px;
+    /* border-width: 2px; */
+    height: 50px;
+   margin-top: 10px;
+   margin-right: 6px;
+   width:80%;
+   margin-left: 70px;
+   /* box-shadow: 0px 1px grey; */
+   outline:0px solid transparent;
+   
+   
+}
+.search_image,.search_image1{
+    cursor: pointer;
+    height: 60%;
+}
+.search_image1{
+    cursor: pointer;
+    height: 40%;
+    padding-bottom: 23px;
+    height: 25%;
+    margin-left: 25px;;
+}
+#note{
+    height: 20vh;
+    padding-top:70px;
+    width:100%;
+    display: flexbox;
+    padding-right: 16%;
+    padding-left:20%;
+   
+    
+    
+}
+.Note{
+    outline:0px solid transparent;
+    width:100%;
+    height:20vh;
+    border-radius: 50px;
+    border-width: 5px;
+    padding: 17px;
+    margin-top:10px;
+    margin-right: 40px;
+    background-color: white;
+    color: chartreuse;
+    border-left-color: white;
+    border-right-color: white;
+    border-top-color: white;
+    border-bottom-color: white;
+    box-shadow: 0px 1px grey;
+}
+.Note2{
+    outline:0px solid transparent;
+    height:5vh;
+    width:60%;
+    border-radius: 50px;
+    border-width: 5px;
+    border-color:rgb(20, 43, 43);
+    padding: 10px;
+    padding-left: 13px;
+    margin-left: 90px;
+    background-color: white;
+    border-left-color: white;
+    border-right-color: white;
+    border-top-color: white;
+    border-bottom-color: white;
+    box-shadow: 0px 1px grey;
+
+    color: chartreuse;
+}
+
+
+.add_Title{
+    border-radius: 25px 65px 0px 0px;
+    border-color: rgb(77, 128, 128);
+    border-bottom-color: rgba(250, 248, 248, 0.801);
+    width:100%;
+    height: 6.9vh;
+    border-bottom-color: white;
+}
+.add_Note{
+    border-radius: 0px 0px 15px 40px;
+    height: 14vh;
+    width:100%;
+    border-color: rgb(77, 128, 128);
+  
+}
+.menu{
+    margin-right: 100px;
+}
+.mid{
+    margin:0 auto;
+    display: block;
+    height: 97vh;
+}
+
+
+
+
+
+
+
+
+
+
+/****************************** middle **************************
+*/
+.header_space{
+    width:100%;
+    height: 10%;
+}
+
+.menu_option{
+width:5.2%;
+background-color: whitesmoke;
+position: fixed;
+float:left;
+height: 100%;
+font-family: cursive;
+margin-top: 3px;
+}
+.menu_option1{
+    height: 100%;
+    width:70px;
+    position: fixed;
+    background-color: whitesmoke;
+    margin-top: 1px;
+}
+.menu_option2{
+    height: 100%;
+    width:150px;
+    background-color: whitesmoke;
+    align-items: flex-start;
+    float: right;
+   
+}
+
+#calend{
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+#briefcase{
+    margin-left: 5px;
+}
+.calender{
+  
+   
+    font-size:25px;
+
+   padding-top: 10px;
+  
+    height: 50px;
+   margin-top: 30px;
+    
+}
+.security_box{
+    padding-top: 5px;
+    font-size:25px;
+    height: 55px;
+   
+}
+.pencil{
+ 
+    font-size:25px;
+    height: 65px;
+}
+.trash{
+    height: 60px;
+    font-size:25px;
+  
+}
+.Notes{
+    width:94.8%;
+    float:right;
+    height:100%;
+    /* background-color: green; */
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+
+/******************************* footer **************************
+*/
+
+.footer{
+    background-color: ivory;
+    height: 7%;
+    width:100%;
+    position: fixed;
+    /* position: fixed; */
+}
+.hello1{
+    height: 70%;
+    width: 100%;
+    display: block;
+}
+/* adding notes to mid */
+.addingnotes{
+    margin-top: 60px;
+    margin-left: 90px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+    background-color: white
+}
+.addingnotes:hover{
+   /* display: none; */
+   cursor: pointer;
+}
+.notetitle{
+    height: 60px;
+    border: 2px solid rgb(227, 245, 158);
+    background-color: crimson;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: -20px;
+    
+    
+}
+.notebody{
+    height: 180px;
+    border: 2px solid rgb(211, 186, 161);
+    background-color: chocolate;
+}
+
+#dltimg{
+    height: 24px;
+    width: 27px;
+    display: none;
+}
