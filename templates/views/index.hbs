@@ -16,20 +16,26 @@
             <div class="search_bar">
 
 
-                <input class="search" placeholder="   Search"> <img src="image/search.svg" height="80%">
-                <!-- <div id="note">
-       <textarea  class="Note" placeholder="Note" ></textarea>
-        <textarea class="Note2" placeholder="Subject"></textarea>
-        <img class="btn1" src="./image/e3e725d3b7d2339c41bb28ff92e8635d.svg" height="40%">
-        
-    </div>
--->
+                {{!-- <input class="search" placeholder="   Search"> <img src="image/search.svg" height="80%"> --}}
+           <form action="/Notes" method="POST"  id="note">
+<input type="textarea" name="notes"  placeholder="note" class="Note">
+
+
+<input type="textarea" name="subjects"  class="Note2" >
+
+
+<input type="submit" name="submit"  class="btn1" value="save">
+
+</form>
             </div>
             <img src="./image/e3e725d3b7d2339c41bb28ff92e8635d.svg" class="toggle">
+           
+        <a href="/logout">logout</a>
             <img src="image/switch.svg" class="mode" height="80%">
         </div>
 
         <a href="/register"><img class="authenticator" src="image/authentication.svg" height="80%"></a>
+        
     </div>
 
     <div class="mid">
@@ -56,7 +62,7 @@
 
         </div>
         <div class="Notes">
-            
+            {{Notess}}
         </div>
 
 

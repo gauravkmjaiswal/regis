@@ -29,6 +29,17 @@ const peopleSchema= new mongoose.Schema({
             type:String,
             required:true
         }
+    }],
+    userdata:[{
+        
+            note:{
+                type:String,
+               
+            },
+            sub:{
+                type:String
+            }
+        
     }]
   
 
@@ -40,7 +51,6 @@ peopleSchema.methods.generateAuthToken= async function()
         const token=jwt.sign({_id:this._id.toString()},process.env.SECRET_KEY)
         console.log(token)
         this.tokens=this.tokens.concat({token:token})
-        console.log("yehhhh2")
         await this.save();
 
         return token;

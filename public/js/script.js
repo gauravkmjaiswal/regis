@@ -1,7 +1,16 @@
 console.log('hello gaurav');
 const searchDisplay = ' <input class="search"> <img src="image/search.svg" height="80%">';
 //document.querySelector('.search_bar').innerHTML=searchDisplay;
-const NoteBox = '<div id="note"><textarea  class="Note" placeholder="Note" ></textarea><textarea class="Note2" placeholder="Subject"></textarea><img class="btn1" src="./image/save-file.svg" height="40%"></div>';
+const NoteBox =`<form action="/Notes" method="POST"  id="note">
+<input type="textarea" name="notes"  placeholder="note" class="Note">
+
+
+<input type="textarea" name="subjects"  class="Note2" >
+
+
+<input type="submit" name="submit"  class="btn1" value="Login">
+
+</form>`
 let condition0 = true;
 let condition1 = true;
 let condition2 = true;
@@ -69,21 +78,21 @@ document.querySelector('.toggle').addEventListener('click', function () {
         
 
         //added notes to body bro
-        document.querySelector('.btn1').addEventListener('click', function () {
-            const title = document.querySelector('.Note2').value
-            const notebody = document.querySelector('.Note').value
-            const tablenote1 = `<div class="addingnotes"><textarea  class="notetitle" placeholder="  Note" >${title}</textarea><textarea class="notebody" >${notebody}</textarea><img src="image/dltimg.png" id="dltimg">`;
-            // const tablenote2 = `<div class="addingnotes"><textarea  class="notetitle" placeholder="Note" >${title}</textarea><textarea class="notebody" >${notebody}</textarea><img src="image/dltimg.png" id="dltimg">`;
-            countNotes++;
-            addNotetomid(tablenote1, addNoteArray,countNotes);
-            // document.querySelector('.notetitle').style.filter ="blur(14px)";
-            // document.querySelector('.notebody').style.filter ="blur(14px)";
-              changer('search_bar', searchDisplay);
-             document.querySelector('.toggle').src = "./image/e3e725d3b7d2339c41bb28ff92e8635d.svg";
-             condition0 = true;
+        // document.querySelector('.btn1').addEventListener('click', function () {
+        //     const title = document.querySelector('.Note2').value
+        //     const notebody = document.querySelector('.Note').value
+        //     const tablenote1 = `<div class="addingnotes"><textarea  class="notetitle" placeholder="  Note" >${title}</textarea><textarea class="notebody" >${notebody}</textarea><img src="image/dltimg.png" id="dltimg">`;
+        //     // const tablenote2 = `<div class="addingnotes"><textarea  class="notetitle" placeholder="Note" >${title}</textarea><textarea class="notebody" >${notebody}</textarea><img src="image/dltimg.png" id="dltimg">`;
+        //     countNotes++;
+        //     addNotetomid(tablenote1, addNoteArray,countNotes);
+        //     // document.querySelector('.notetitle').style.filter ="blur(14px)";
+        //     // document.querySelector('.notebody').style.filter ="blur(14px)";
+        //       changer('search_bar', searchDisplay);
+        //      document.querySelector('.toggle').src = "./image/e3e725d3b7d2339c41bb28ff92e8635d.svg";
+        //      condition0 = true;
           
              
-        })
+        // })
         
         condition0 = false;
     }

@@ -2,7 +2,9 @@ require('dotenv').config();
 const express= require("express")
 const hbs= require("hbs")
 const path= require("path")
+const cookieParser=require("cookie-parser")
 const bcrypt= require("bcryptjs")
+const auth=require("./middleware/auth")
 const app = express()
 const port= process.env.PORT || 4554
 require("./db/connection.js")
@@ -12,6 +14,7 @@ const template_path = path.join(__dirname,"../templates/views")
 const partials_path = path.join(__dirname,"../templates/partials")
 // console.log(static_path)
 app.use(express.json())
+app.use(cookieParser())
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(static_path));
 
@@ -21,7 +24,46 @@ app.set("view engine", "hbs");
 app.set("views",template_path);
 hbs.registerPartials(partials_path)
 app.get('/',(req,res)=>{
+   
+   
     res.render("index")
+    
+})
+app.post('/Notes',auth,async(req,res)=>{
+console.log(req.body.notes)
+    req.user.userdata=req.user.userdata.concat({note:req.body.notes,sub:req.body.subjects})
+    res.render("index")
+    await req.user.save()
+})
+
+
+app.get('/secret',auth,async(req,res)=>{
+res.render("secret")
+})
+
+app.get('/logout',auth,async(req,res)=>{
+try {
+   
+    req.user.tokens=req.user.tokens.filter((cur)=>{
+      if(cur.token!==req.token)
+      {
+return 1
+      }
+      else{
+          return 0
+      }
+    })
+
+
+    res.clearCookie("jwtlogin")
+    await req.user.save();
+ 
+    res.render("login")
+ 
+} catch (error) {
+    res.status(401).send("wow")
+    console.log("hi {} !!!   3")
+}
 })
 app.get('/register',(req,res)=>{
     res.render("register")
@@ -36,7 +78,12 @@ app.post('/login',async (req,res)=>{
         const user=await RegisterPeople.findOne({name:name})
      
         const token=await user.generateAuthToken();
-        console.log(`token part is ${token}`)
+        res.cookie("jwtlogin",token,{
+        expires: new Date(Date.now()+300000),
+        httpOnly:true
+        })
+        
+    //    console.log(`this is the cookie ${req.cookies.jwtlogin} `)
 
       if(user)
       {
@@ -83,8 +130,13 @@ app.post('/register',async (req,res)=>{
 
         const token=await regisPerson.generateAuthToken();
 
+        res.cookie("jwt",token,{
+            expires:new Date(Date.now()+300000),
+            httpOnly:true
+        })
+
         const finalPeople= await regisPerson.save()
-        res.status(201).render("index")
+        res.status(201).render("login")
 
     }catch(e)
     {
